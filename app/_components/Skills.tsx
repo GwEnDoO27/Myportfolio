@@ -25,7 +25,7 @@ export const Skills = () => {
                 <div className="flex flex-col gap-2">
                     <PythonLogo size={42} />
                     <h3 className="text-2xl font-semibold tracking-tight">Python</h3>
-                    <p className="text-sm text-muted-foreground">I use it for backend server too and for statistics projects</p>
+                    <p className="text-sm text-muted-foreground">I use it for backend server too, for statistics and IA projects</p>
                 </div>
             </div>
         </Section>

@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Card } from "@/components/ui/card"
-import { ArrowUpRight, FolderCode, Gamepad, Landmark, LucideIcon, MessageSquareText, Waves } from "lucide-react"
+import { ArrowUpRight, ChefHat, FolderCode, Gamepad, Landmark, LucideIcon, MessageSquareText, Receipt, Waves } from "lucide-react"
 import Myface from "./assets/MyfaceRound.png"
 import { Section } from "./Section"
 
@@ -11,7 +11,7 @@ export const Status = () => {
         <Section classname="flex max-md:flex-col items-start gap-3">
             <div className="flex-[3] w-full">
                 <Card className="p-4 w-full flex flex-col gap-2">
-                    <p className="text-lg text-muted-foreground">School&rsquo;s projects</p>
+                    <p className="text-lg text-muted-foreground">Side and funs projects</p>
                     {SIDE_Project.map((project, index) => (
                         <SideProject
                             key={index}
@@ -25,7 +25,7 @@ export const Status = () => {
             </div>
             <div className="flex-[2] w-full flex flex-col gap-4">
                 <Card className="p-4 w-full flex flex-col gap-2">
-                    <p className="text-lg text-muted-foreground">Side and funs projects</p>
+                    <p className="text-lg text-muted-foreground">School&rsquo;s projects</p>
                     {SCHOOL_Project.map((school, index) => (
                         <Schoolprojects
                             key={index}
@@ -60,6 +60,18 @@ type SideProjectProps = {
 
 
 const SIDE_Project: SideProjectProps[] = [
+    {
+        Logo: Receipt,
+        title: "Ma Facture",
+        description: "A tool to create your invoice",
+        url: "https://ma-facture-eight.vercel.app/"
+    },
+    {
+        Logo: ChefHat,
+        title: "Tinder Recipes",
+        description: "A little app to find recipes based on tinder swipe",
+        url: "https://github.com/GwEnDoO27/tinder-recipes"
+    },
     {
         Logo: FolderCode,
         title: "FilesOrganisationForProject",
