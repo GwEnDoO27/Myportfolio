@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Card } from "@/components/ui/card"
-import { ArrowUpRight, ChefHat, FolderCode, Gamepad, Landmark, LucideIcon, MessageSquareText, Receipt, Waves } from "lucide-react"
+import { ArrowUpRight, BrainCircuit, ChefHat, Gamepad, Landmark, LucideIcon, MessageSquareText, Network, Receipt } from "lucide-react"
 import Myface from "./assets/MyfaceRound.png"
 import { Section } from "./Section"
 
@@ -8,7 +8,7 @@ import Link from "next/link"
 
 export const Status = () => {
     return (
-        <Section classname="flex max-md:flex-col items-start gap-3">
+        <Section className="flex max-md:flex-col items-start gap-3">
             <div className="flex-[3] w-full">
                 <Card className="p-4 w-full flex flex-col gap-2">
                     <p className="text-lg text-muted-foreground">Side and funs projects</p>
@@ -58,8 +58,13 @@ type SideProjectProps = {
     url: string
 }
 
-
 const SIDE_Project: SideProjectProps[] = [
+    {
+        Logo: BrainCircuit,
+        title: "Tiktok Recette Transcriber",
+        description: "Add a link for a cooking TikTok video and get the recipe back as a note",
+        url: "https://github.com/GwEnDoO27/Recette_Tiktok_transcriber.git"
+    },
     {
         Logo: Receipt,
         title: "Ma Facture",
@@ -67,25 +72,17 @@ const SIDE_Project: SideProjectProps[] = [
         url: "https://ma-facture-eight.vercel.app/"
     },
     {
+        Logo: Network,
+        title: "Monitoring Serv",
+        description: "An app for monitoring servers",
+        url: "https://github.com/GwEnDoO27/FilesOrganisationForProject",
+    },
+    {
         Logo: ChefHat,
         title: "Tinder Recipes",
         description: "A little app to find recipes based on tinder swipe",
         url: "https://github.com/GwEnDoO27/tinder-recipes"
     },
-    {
-        Logo: FolderCode,
-        title: "FilesOrganisationForProject",
-        description: "A tool for creating the architecture of your project",
-        url: "https://github.com/GwEnDoO27/FilesOrganisationForProject",
-    },
-    {
-        Logo: Waves,
-        title: "Adjust-Your-Piscine-Water",
-        description: "Help you to adjust your pool water",
-        url: "https://github.com/GwEnDoO27/Adjust-Your-Piscine-Water"
-    },
-
-
 ]
 const SideProject = (props: SideProjectProps) => {
     return (
@@ -98,22 +95,17 @@ const SideProject = (props: SideProjectProps) => {
                 <p className="text-sm text-muted-foreground">{props.description}</p>
             </div>
         </Link>
-
-
     )
 }
 
-type Schoolprojectsprops = {
+type SchoolProjectProps = {
     Logo: LucideIcon
     title: string
     description: string
     url: string
 }
 
-
-
-
-const SCHOOL_Project: Schoolprojectsprops[] = [
+const SCHOOL_Project: SchoolProjectProps[] = [
     {
         Logo: MessageSquareText,
         title: "Real Time Forum",
@@ -122,22 +114,19 @@ const SCHOOL_Project: Schoolprojectsprops[] = [
     },
     {
         Logo: Landmark,
-        title: "ATM Management Systeme",
+        title: "ATM Management System",
         description: "Terminal ATM in C",
         url: "https://github.com/GwEnDoO27/School-Project/tree/main/atm-management-system"
     },
     {
         Logo: Gamepad,
         title: "Make your game",
-        description: "Reproduce the duck hunt game in whith Javascript",
+        description: "Reproduce the Duck Hunt game with JavaScript",
         url: "https://github.com/GwEnDoO27/School-Project/tree/main/Make%20ur%20game/make-your-game"
     },
-
-
 ]
 
-
-const Schoolprojects = (props: Schoolprojectsprops) => {
+const Schoolprojects = (props: SchoolProjectProps) => {
     return (
         <Link
             href={props.url}
@@ -150,8 +139,6 @@ const Schoolprojects = (props: Schoolprojectsprops) => {
                 <p className="text-sm text-muted-foreground">{props.description}</p>
             </div>
         </Link>
-
-
     )
 }
 

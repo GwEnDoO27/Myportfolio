@@ -6,12 +6,11 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const Robot = Roboto_Mono({ subsets: ["latin"], variable: "--font-caption", });
-//const Comfort = Comfortaa({ subsets: ["latin"], variable: "--caption-caption" });
+const Robot = Roboto_Mono({ subsets: ["latin"], variable: "--font-caption" });
 
 export const metadata: Metadata = {
-  title: "Gwendal Benard Student",
-  description: "Full stack student developpers",
+  title: "Gwendal Bénard - Full Stack Developer",
+  description: "Full Stack Developer portfolio - Python, Go, Swift",
 };
 
 export default function RootLayout({
@@ -20,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="h-full">
+    <html lang="en">
       <body
         className={cn(
           GeistSans.variable,
