@@ -10,7 +10,15 @@ const Robot = Roboto_Mono({ subsets: ["latin"], variable: "--font-caption" });
 
 export const metadata: Metadata = {
   title: "Gwendal Bénard - Full Stack Developer",
-  description: "Full Stack Developer portfolio - Python, Go, Swift",
+  description: "Full Stack Developer passionate about Swift, Python, and Go. Specialized in iOS apps, web servers, and AI projects.",
+  authors: [{ name: "Gwendal Bénard" }],
+  openGraph: {
+    title: "Gwendal Bénard - Full Stack Developer",
+    description: "Full Stack Developer passionate about Swift, Python, and Go. Specialized in iOS apps, web servers, and AI projects.",
+    type: "website",
+    locale: "en_US",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Gwendal Bénard - Full Stack Developer" }],
+  },
 };
 
 export default function RootLayout({
