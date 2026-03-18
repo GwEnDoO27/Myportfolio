@@ -9,7 +9,7 @@ import Link from "next/link"
 export const Status = () => {
     return (
         <Section className="flex max-md:flex-col items-start gap-3">
-            <div className="flex-[3] w-full">
+            <div className="flex-[3] w-full flex flex-col gap-3">
                 <Card className="p-4 w-full flex flex-col gap-2">
                     <p className="text-lg text-muted-foreground">Side and funs projects</p>
                     {SIDE_Project.map((project, index) => (
@@ -22,8 +22,14 @@ export const Status = () => {
                         />
                     ))}
                 </Card>
+                <Card className="p-4 w-full flex flex-col gap-3">
+                    <p className="text-lg text-muted-foreground">Experience</p>
+                    {EXPERIENCES.map((exp, index) => (
+                        <ExperienceItem key={index} {...exp} isLast={index === EXPERIENCES.length - 1} />
+                    ))}
+                </Card>
             </div>
-            <div className="flex-[2] w-full flex flex-col gap-4">
+            <div className="flex-[2] w-full flex flex-col gap-3">
                 <Card className="p-4 w-full flex flex-col gap-2">
                     <p className="text-lg text-muted-foreground">School&rsquo;s projects</p>
                     {SCHOOL_Project.map((school, index) => (
@@ -139,6 +145,44 @@ const Schoolprojects = (props: SchoolProjectProps) => {
                 <p className="text-sm text-muted-foreground">{props.description}</p>
             </div>
         </Link>
+    )
+}
+
+type ExperienceProps = {
+    role: string
+    company: string
+    period: string
+    description: string
+    isLast?: boolean
+}
+
+const EXPERIENCES: Omit<ExperienceProps, "isLast">[] = [
+    {
+        role: "Développeur Full Stack",
+        company: "Cabinet Martini",
+        period: "2024 — Présent",
+        description: "Développement d'une infra entreprise et logiciels personalisés.",
+    },
+
+]
+
+const ExperienceItem = ({ role, company, period, description, isLast }: ExperienceProps) => {
+    return (
+        <div className="flex gap-4">
+            <div className="flex flex-col items-center">
+                <span className="mt-1 w-2 h-2 rounded-full bg-primary shrink-0" />
+                {!isLast && <span className="w-px flex-1 bg-border mt-1" />}
+            </div>
+            <div className={`flex flex-col gap-0.5 ${!isLast ? "pb-4" : ""}`}>
+                <div className="flex items-center gap-2 flex-wrap">
+                    <p className="text-base font-semibold">{role}</p>
+                    <span className="text-muted-foreground">·</span>
+                    <p className="text-base text-primary/90">{company}</p>
+                </div>
+                <p className="text-xs text-muted-foreground">{period}</p>
+                <p className="text-sm text-muted-foreground mt-1">{description}</p>
+            </div>
+        </div>
     )
 }
 
